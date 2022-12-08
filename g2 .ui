@@ -1,0 +1,29 @@
+	
+}
+
+	// Delete g1 flag 2 if flag
+	delete_option( $name_options_child );
+
+}}
+
+if ( $indicator_pro_installed !== '1' ) {
+
+		$options_free['thinkup_header_styleswitch'] = '';
+		$options_free['thinkup_blog_style']         = '';
+		$options_free['thinkup_blog_style1layout']  = '';
+		$options_free['thinkup_blog_style2layout']  = '';
+		$options_free['thinkup_styles_colorswitch'] = '';
+		$options_free['thinkup_styles_colorcustom'] = '';
+		$options_free['thinkup_styles_skinswitch']  = '';
+		$options_free['thinkup_styles_skin']        = '';
+
+		// Add child settings to theme options array
+		update_option( $name_options_free, $options_free );
+
+	}
+
+	// Delete the child settings flag
+	delete_option( $name_options_child );
+
+}
+add_action( 'switch_theme', 'grow_thinkup_removeoption_child_settings' );
