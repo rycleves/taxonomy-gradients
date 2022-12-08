@@ -1,0 +1,25 @@
+}
+add_action( 'init', 'grow_thinkup_updateoption_child_set', 999 );
+
+// Remove child theme settings from options array - UPDATED 20181101
+function grow_thinkup_removeoption_child_set() {
+
+	// Set theme name combinations
+	$name_theme_upper = 'grow';
+	$name_theme_lower = strtolower( $name_theme_upper );
+
+	// Set possible options names
+	$name_options_free  = 'thinkup_redux_variables';
+	$name_options_child = $name_theme_lower . '_thinkup_child_settings_blog';
+
+	// Get options values (theme options)
+	$options_free = get_option( $name_options_free );
+
+	// Determine if version g1 is installed
+	$themes = wp_get_themes();
+	foreach ( $themes as $theme ) {
+		if( $theme == $name_theme_upper . ' Pro' ) {
+			$indicator_pro_installed = '1';
+		}
+	}
+
